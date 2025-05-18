@@ -1,0 +1,271 @@
+
+body
+{
+	margin: 0px;
+    color:black;
+    font-family: arial;
+}
+#nav-items {
+    box-shadow: 1px 0px 1px  rgb(90, 90, 90);
+    height: 70px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr ;
+    gap: 10px;
+}
+
+.nav-logo
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	background-repeat: no-repeat;    
+    
+}
+.logo
+{
+	  background-image: url(/public/Logo.png);	 
+	  background-size: cover;
+      width: 65px;
+      height: 65px;
+      cursor: pointer;
+}
+#nav-menu-items
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-menu
+{
+	color: #262626;
+	padding:14px 8px 10px;
+	font-size: 15px;
+	margin: 1px 0px 0px;
+	text-decoration: none;
+}
+.nav-menu:hover
+{
+	text-decoration: underline;
+}
+.nav-select
+{
+	
+	margin-left: 400px;
+	margin-top: 20px;
+	margin-right: 0px;
+	padding: 0px 10px 16px 15px;
+
+}
+.nav-icon
+{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 5rem;
+    margin-top: 10px;
+}
+
+
+.all
+{
+	font-size: 13px;
+	text-decoration: none;
+}
+.all:hover
+{
+	text-decoration: underline;
+}
+#round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: solid 1px black;
+    border-radius: 50%;
+    margin-left: 2rem;
+	cursor: pointer;
+}
+#option
+{
+    border: none;
+}
+#icon {
+	color: black;
+	cursor: pointer;
+    margin-left: 2rem;
+}
+#search {
+	visibility: hidden;
+	background-color: rgb(255, 255, 255);
+	color: rgb(48, 48, 48);
+	font-size: 9px;
+	width: 130px;	
+	height: 12px;
+	box-shadow:  2px 1px 5px  rgb(90, 90, 90);
+	padding: 5px;
+	text-align: center;
+	padding-top: 10px;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-100%);
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+#cart {
+	visibility: hidden;
+	background-color: rgb(255, 255, 255);
+	color: rgb(48, 48, 48);
+	font-size: 9px;
+	width: 130px;	
+	height: 12px;
+	box-shadow:  2px 1px 5px  rgb(90, 90, 90);
+	padding: 5px;
+	text-align: center;
+	padding-top: 10px;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-100%);
+	white-space: nowrap;
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+#icon:hover #search {
+	visibility: visible;
+	opacity: 1;
+}
+#icon:hover #cart {
+	visibility: visible;
+	opacity: 1;
+}
+
+#wrapper
+{
+    min-height: 500px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr ;
+	gap: 20px;
+	padding: 2rem;
+}
+#add-item-btn
+{
+	padding:0px ;
+	border-radius:5px;
+	border: none;	
+	height:30px;
+	width: 90px;
+	color:#ffffff;
+	background-color:#0067b8;
+	
+	cursor: pointer;
+}
+#add-item-btn:hover {
+	background-color: #0053a6;
+}
+#box
+{
+	box-shadow: 1px 1px 10px  lightgray;
+	height: 480px;
+	width: 290px;
+	cursor: pointer;
+	padding-bottom: 5px;
+}
+#middle-image
+{   
+	/* background-image:url(image/card1.avif); */
+	width:290px;
+	height: 150px;
+	background-size: cover;	
+}
+#card-text
+{
+	min-height: 200px;
+	width:242px;
+	padding: 24px 24px 0px;
+}
+#text
+{
+	font-size:24px;
+	font:bold;
+}
+#card-base
+{
+	padding:0px 0px 0px 20px;
+	width:249px;
+	height:73px;
+	margin-left: 0px;
+}
+#cart-Btn
+{
+	padding:7px 12px;
+	border-radius:2px;
+	margin-top: 9px;
+	border: solid 1px #bebebe;	
+	height:30px;
+	width: 244px;
+	color:#000000;
+	background-color:#ffffff;
+	font-weight: bolder;
+	cursor: pointer;
+}
+#cart-Btn:hover {
+	background-color: #f5f5f5;
+}
+#button
+{
+	padding:0px ;
+	border-radius:5px;
+	border: none;	
+	height:30px;
+	width: 90px;
+	color:#ffffff;
+	background-color:#0067b8;
+	
+	cursor: pointer;
+}
+#button:hover {
+	background-color: #0053a6;
+}
+#back-button {
+	margin-left: 20px;
+	padding:0px ;
+	border-radius:5px;
+	border: none;	
+	height:30px;
+	width: 90px;
+	color:#ffffff;
+	background-color:#0067b8;	
+	cursor: pointer;
+}
+#back-button:hover {
+	background-color: #0053a6;
+}
+@media screen and (max-width: 1200px) {
+    #wrapper {
+        grid-template-columns: 1fr 1fr 1fr ;
+    }
+}
+@media screen and (max-width: 790px) {
+    #nav-menu-items {
+        display: none;
+    }
+    #nav-items {
+        grid-template-columns: 1fr  1fr ;
+    }
+     #wrapper {
+        grid-template-columns: 1fr 1fr ;
+    }
+
+}
+@media screen and (max-width: 500px) {
+    .nav-icon {
+        margin-right: 10px;
+    }
+     #wrapper {
+        grid-template-columns: 1fr ;
+    }
+}
