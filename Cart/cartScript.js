@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const cartEmptyText = document.querySelector("#cart-empty");
     const cartWrapper = document.querySelector("#cart-wrapper");
+    const total = document.querySelector("#total");
    
-    const quantity = 0 
+    let quantity = 0 
+    let totalPrice = 0 
     const addToCartItems = [];
     
     const itemFromLocalStorage = JSON.parse(localStorage.getItem('products'))
@@ -13,10 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         cartEmptyText.hidden = true;
     }
    
-    
     displayCartItems()
     
-
     function displayCartItems() {
         addToCartItems.forEach((item) => {            
             item.forEach((item) => {                           
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <h3 style="color: teal; margin: 5px; padding-left: 21px;">${item.price}
                         </h3>
                         <div id="card-base"> 
-                        <div id="card-button">
+                       <div id="card-button">
                           <button id="button">${item.aboutBtn}</button>
                           <button id="button">${item.buy}</button>
                           <a ><button productId=${item.id} id="cart-Btn">Remove</button></a>
@@ -46,14 +46,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 productCard.addEventListener('click' , (e) => {
                     if(e.target.id === 'cart-Btn') {
-                            productCard.remove()
+                        productCard.remove()                        
                     }
                 })
             })                   
         })
+        
     }
     
-    
+    const findTotal = () => {
+        if(addToCartItems.length === 0) return;
+        addToCartItems.map((item) => {
+            item.map((item) => {
+                totalPrice += item.price;
+                quantity = addToCartItems[0].length                 
+            })
+        })
+        console.log(totalPrice);                 
+        total.innerHTML = `<p id='total-text'> Total Items: ${quantity}</p> <p id='total-text'> Total Price: ${totalPrice} </p>`
+
+    }
+    findTotal()
 })    
 
 
